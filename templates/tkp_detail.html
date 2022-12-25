@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+  <div class="post-entry">
+    <h2>{{ tkp_detail.title }}</h2>
+    <p>{{ tkp_detail.body }}</p>
+  </div>
+
+  <p><a href="{% url 'tkp_edit' object.pk %}">+ Редактировать</a></p>
+  <p><a href="{% url 'tkp_delete' object.pk %}">- Удалить ТКП</a></p>
+
+{% endblock content %}
