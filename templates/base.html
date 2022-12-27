@@ -8,8 +8,13 @@
   <body>
     <div>
       <header>
-        <div class="nav-left"
-             <h1><a href="{% url 'home' %}">Вэб-приложение для ТКП</a></h1>
+        {% if user.is_authenticated and user.is_staff %}
+        <div class="nav-left">
+             <h1><a href="{% url 'home' %}">Все ТКП</a></h1>
+        </div>
+      {% endif %}
+        <div class="nav-right">
+             <a href="{% url 'my_list' %}">Мои ТКП</a>
         </div>
         <div class="nav-right">
             <a href="{% url 'tkp_add' %}">+ Добавить новое ТКП</a>
