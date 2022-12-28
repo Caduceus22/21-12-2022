@@ -30,13 +30,31 @@ class TkpDetailView(DetailView):
 class TkpCreateView(CreateView):
     model = Tkp_new
     template_name = 'tkp_new.html'
-    fields = ['title', 'author', 'body']
+    fields = ['author',
+              'title',
+              'data_create_tkp',
+              'summa_tkp',
+              'kontakt_tkp',
+              'city_client',
+              'description_tkp',
+              'tender_tkp',
+              'notes_tkp',
+              'slug'
+              ]
 
 
 class TkpUpdateView(UpdateView):
     model = Tkp_new
     template_name = 'tkp_new_update_form.html'
-    fields = ['title', 'body']
+    fields = ['title',
+              'summa_tkp',
+              'kontakt_tkp',
+              'city_client',
+              'description_tkp',
+              'tender_tkp',
+              'notes_tkp',
+              'slug'
+              ]
     template_name_suffix = '_update_form'
 
 

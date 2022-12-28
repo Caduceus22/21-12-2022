@@ -1,10 +1,50 @@
 {% extends 'base.html' %}
  
 {% block content %}
+<table class="table table-hover">
+  <tr class="table table-hover">
+      <th>
+    Организация (Клиент)
+      </th>
+    <td>
+      № ТКП
+    </td>
+      <td>
+      Дата ТКП
+    </td>
+
+    <td>
+      Сумма ТКП
+    </td>
+
+    <td>
+      Автор
+    </td>
+  </tr>
+
   {% for post in my_list %}
-    <div class="post-entry">
-      <h2><a href="{% url 'tkp_detail' post.pk %}">{{ post.title }}</a></h2>
-      <p>{{ post.body }}</p>
-    </div>
+
+  <tr class="table table-hover">
+    <th class="table table-hover">
+      <a href="{% url 'tkp_detail' post.pk %}">{{ post.title }}</a>
+    </th>
+    <td class="table table-hover">
+      <p>{{ post.id }}</p>
+    </td>
+    <td class="table table-hover">
+      <p>{{ post.data_create_tkp }}</p>
+    </td>
+    <td class="table table-hover">
+      <p>{{ post.summa_tkp }}</p>
+    </td>
+    <td class="table table-hover">
+      <p>{{ post.author }}</p>
+    </td>
+
+
+  </tr>
+
   {% endfor %}
+
+</table>
 {% endblock content %}
