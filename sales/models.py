@@ -14,13 +14,12 @@ class Tkp_new(models.Model):
     kontakt_tkp = models.CharField("Контактное лицо", max_length=200)
     city_client = models.CharField("Населённый пункт", max_length=200)
     description_tkp = models.CharField("Оборудование, содержание/предложение", max_length=200)
-    tender_tkp = models.BooleanField("Тендер, да/нет", default=False)
-    notes_tkp = models.CharField("Примечание", max_length=200)
+    tender_tkp = models.BooleanField("Тендер", default=False)
+    notes_tkp = models.CharField("Примечание", max_length=200, blank=True, default='')
     author = models.ForeignKey(
         'auth.User',
         on_delete=models.CASCADE,
     )
-    slug = models.SlugField(max_length=160, unique=True, db_index=True, verbose_name="URL")
     members = models.ManyToManyField(User, related_name="members", blank=True)
 
     def __str__(self):

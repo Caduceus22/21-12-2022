@@ -20,7 +20,6 @@ class MyListView(ListView):
         return Tkp_new.objects.filter(author=self.request.user)
 
 
-
 class TkpDetailView(DetailView):
     model = Tkp_new
     template_name = 'tkp_detail.html'
@@ -39,8 +38,8 @@ class TkpCreateView(CreateView):
               'description_tkp',
               'tender_tkp',
               'notes_tkp',
-              'slug'
               ]
+    success_url = reverse_lazy('my_list')
 
 
 class TkpUpdateView(UpdateView):
