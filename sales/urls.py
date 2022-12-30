@@ -7,9 +7,11 @@ from .views import (
     TkpCreateView,
     TkpUpdateView,
     TkpDeleteView,
+    about,
 )
 
 urlpatterns = [
+    path('tkp/about/', about, name='about'),
     path('', HomePageView.as_view(), name='home'),
     path('tkp/mylist/', MyListView.as_view(), name='my_list'),
     path('tkp/new/', TkpCreateView.as_view(), name='tkp_add'),
